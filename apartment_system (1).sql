@@ -211,6 +211,17 @@ INSERT INTO `utility_bills` (`bill_id`, `lease_id`, `utility_type`, `billing_mon
 -- Indexes for dumped tables
 --
 
+
+CREATE TABLE archive (
+    archive_id INT(11) NOT NULL AUTO_INCREMENT,
+    record_type VARCHAR(50) NOT NULL,
+    record_id INT(11) NOT NULL,
+    record_details TEXT NOT NULL,
+    archived_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (archive_id)
+);
+
+
 --
 -- Indexes for table `leases`
 --
@@ -341,3 +352,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
